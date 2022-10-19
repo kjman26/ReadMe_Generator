@@ -1,7 +1,7 @@
 //adding required packages
 const inquirer = require("inquirer");
 const fs = require("fs");
-const toMarkdown = require("to-markdown");
+// const toMarkdown = require("to-markdown");
 const generateMarkdown = require("./Utils/generateMarkdown");
 
 //create an array of questions for user input and will go to generateMarkdown
@@ -57,6 +57,8 @@ inquirer.createPromptModule([
 
 .then((response) => {
    
+    renderLicenseBadge(LICENSE);
+
     const md = `${response.TITLE}';
 
     Table of Contents:
@@ -73,8 +75,31 @@ inquirer.createPromptModule([
     
     [Questions](#Questions)    
 
+    Description:
 
+    ${response.DESCRIPTION}
 
+    Usage:
+
+    ${response.USAGE}
+
+    Licenses:
+
+    ${response.LICENSE}
+
+    Contributions:
+    
+    ${response.CREDITS}
+
+    Testing:
+
+    ${response.TESTS}
+
+    Questions:
+
+    [Link to GitHub](https://www.github.com/${response.GITHUB})
+    
+    [Link to Email](${response.EMAIL})`
 
 })
 
