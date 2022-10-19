@@ -53,5 +53,22 @@ inquirer.createPromptModule([
         message: 'Add your EMAIL',
         name: 'EMAIL'
     }
-]);
+])
+
+.then((response) => {
+   
+    const md = `${response.TITLE}`;
+
+    
+
+})
+
+
+   
+
+//write the file using response.TITLE
+const fileName = `${response.TITLE}.md`;
+    fs.writeFile(fileName, md, (err) => err ? console.log(err) :
+    console.log("Success!"));
+
 
