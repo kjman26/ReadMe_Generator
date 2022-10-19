@@ -57,9 +57,24 @@ inquirer.createPromptModule([
 
 .then((response) => {
    
-    const md = `${response.TITLE}`;
+    const md = `${response.TITLE}';
 
+    Table of Contents:
+
+    [Description](#Description)
+
+    [Installation](#Install)
+
+    [Usage](#Usage)
     
+    [Contributions](#Credits)
+    
+    [Tests](#Test)
+    
+    [Questions](#Questions)    
+
+
+
 
 })
 
