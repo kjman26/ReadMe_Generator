@@ -6,9 +6,9 @@ const index = require('../index')
 
 function renderLicenseBadge(LICENSE) {
     let badge = "";
-    if (LICENSE == "APM") {
+    if (LICENSE === "APM") {
         badge = ![Alt = badge]('https://img.shields.io/apm/l/APM?style=flat-square')
-    } else if (LICENSE == "CRAN/METACRAN"){
+    } else if (LICENSE === "CRAN/METACRAN"){
         badge = ![alt = badge]('https://img.shields.io/cran/l/CRAN?color=red')
     } else if (LICENSE == "NPM") {
         badge = ![alt = badge]('https://img.shields.io/npm/l/NPM?color=BLUE')

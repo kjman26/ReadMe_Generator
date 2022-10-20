@@ -1,12 +1,11 @@
 //adding required packages
 const inquirer = require("inquirer");
 const fs = require("fs");
-// const toMarkdown = require("to-markdown");
-const generateMarkdown = require("./Utils/generateMarkdown");
+const generateMarkdown = require("./Utils/generateMarkdown")
 
 //create an array of questions for user input and will go to generateMarkdown
 
-inquirer.createPromptModule([
+inquirer.prompt([
     {
         type: 'input',
         message: 'ADD Title and a LINK to your project!',
@@ -57,7 +56,7 @@ inquirer.createPromptModule([
 
 .then((response) => {
    
-    renderLicenseBadge(LICENSE);
+    
 
     const md = `${response.TITLE}';
 
@@ -101,14 +100,17 @@ inquirer.createPromptModule([
     
     [Link to Email](${response.EMAIL})`
 
-})
-
-
-   
-
 //write the file using response.TITLE
 const fileName = `${response.TITLE}.md`;
     fs.writeFile(fileName, md, (err) => err ? console.log(err) :
     console.log("Success!"));
+
+})
+
+// function init() {
+//     inquirer.prompt();
+// }    
+
+// renderLicenseBadge(LICENSE);
 
 
