@@ -5,7 +5,7 @@ const generateMarkdown = require("./Utils/generateMarkdown")
 
 //create an array of questions for user input and will go to generateMarkdown
 
-inquirer.prompt([
+const QUEST = inquirer.prompt([
     {
         type: 'input',
         message: 'ADD Title and a LINK to your project!',
@@ -55,10 +55,8 @@ inquirer.prompt([
 ])
 
 .then((response) => {
-   
-    
-
-    const md = `${response.TITLE}';
+//    renderLicenseBadge(response.LICENSE);
+    const md = `${response.TITLE}
 
     Table of Contents:
 
@@ -72,21 +70,22 @@ inquirer.prompt([
     
     [Tests](#Test)
     
-    [Questions](#Questions)    
+    [Questions](#Questions) 
 
-    Description:
+
+    #Description:
 
     ${response.DESCRIPTION}
 
-    Usage:
+    #Usage:
 
     ${response.USAGE}
 
-    Licenses:
+    #Licenses:
 
     ${response.LICENSE}
 
-    Contributions:
+    #Contributions:
     
     ${response.CREDITS}
 
@@ -106,11 +105,12 @@ const fileName = `${response.TITLE}.md`;
     console.log("Success!"));
 
 })
-
+module.exports = QUEST.response
+console.log(QUEST.response)
 // function init() {
 //     inquirer.prompt();
 // }    
 
-// renderLicenseBadge(LICENSE);
+
 
 
