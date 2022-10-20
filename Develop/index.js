@@ -106,7 +106,7 @@ const fileName = `${response.TITLE}.md`;
 
 })
 module.exports = QUEST.response
-console.log(QUEST.response)
+
 // function init() {
 //     inquirer.prompt();
 // }    
